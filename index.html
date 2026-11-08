@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>neverlose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['Geist Mono', 'monospace'],
+          },
+          colors: {
+            border: '#27272a',
+            input: '#27272a',
+            ring: '#d4d4d8',
+            background: '#000000',
+            foreground: '#fafafa',
+            primary: {
+              DEFAULT: '#fafafa',
+              foreground: '#09090b',
+            },
+            secondary: {
+              DEFAULT: '#18181b',
+              foreground: '#fafafa',
+            },
+            muted: {
+              DEFAULT: '#18181b',
+              foreground: '#a1a1aa',
+            },
+          },
+          borderRadius: {
+            lg: '0.625rem',
+            md: 'calc(0.625rem - 2px)',
+            sm: 'calc(0.625rem - 4px)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #000000;
+      color: #fafafa;
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Clean smooth fade up animation */
+    @keyframes smoothEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-smooth-in {
+      animation: smoothEntrance 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Prevent icon layout shifting before Lucide renders */
+    i[data-lucide] {
+      display: inline-block;
+      width: 0.875rem;
+      height: 0.875rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="relative w-full max-w-4xl mx-auto px-6 py-8 flex items-center justify-between z-20">
+    <!-- Left: Status dot + GitHub link -->
+    <a
+      href="https://github.com/oneprinceee"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-neutral-200 transition-colors select-none group"
+    >
+      <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
+      <span class="tracking-wide">github</span>
+    </a>
+  </header>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full flex-1 flex flex-col justify-center">
+
+    <!-- CENTERED HERO -->
+    <main class="animate-smooth-in w-full max-w-xl mx-auto px-6 flex flex-col justify-center items-center text-center">
+      <div class="space-y-3 mb-8">
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-100">
+          foreverlose
+        </h1>
+        <p class="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+          your favorite software now free
+        </p>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex items-center gap-2 flex-wrap justify-center">
+        <a
+          href="#"
+          download
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-xs font-medium h-8 px-3 bg-foreground text-background hover:bg-neutral-200 active:scale-[0.99] transition-all"
+        >
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>download dll</span>
+        </a>
+        <a
+          href="#"
+          download
+          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-xs font-mono h-8 px-3 border border-border bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 hover:text-neutral-100 transition-all"
+        >
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>download loader</span>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="relative z-10 w-full max-w-4xl mx-auto px-6 py-8 text-center">
+    <p class="text-[11px] font-mono text-neutral-500">
+      v1.1 &bull; free
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
